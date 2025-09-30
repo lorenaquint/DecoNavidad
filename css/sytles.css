@@ -99,7 +99,7 @@
         .hero h1 {
             font-size: 56px;
             margin: 20px 0;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            
             animation: fadeInDown 1s ease-out;
         }
 
