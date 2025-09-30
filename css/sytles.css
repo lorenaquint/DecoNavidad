@@ -389,6 +389,167 @@
             transform: translateX(-50%);
             animation: scroll 2s infinite;
         }
+        /* estilos de la tabla */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        thead {
+            background: #00A9C5;
+            color: white;
+        }
+
+        th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tbody tr {
+            border-bottom: 1px solid #ecf0f1;
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(0, 169, 197, 0.1);
+            transform: scale(1.02);
+        }
+
+        td {
+            padding: 18px 20px;
+            color: #2c3e50;
+        }
+
+        .actividad {
+            font-weight: 500;
+            color: #34495e;
+        }
+
+        .valor {
+            font-weight: 600;
+            color: #00A9C5;
+        }
+
+        .total-row {
+            background: #FF6242;
+            font-weight: bold;
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .total-row td {
+            padding: 25px 20px;
+            color: white;
+        }
+
+        .total-row:hover {
+            transform: scale(1);
+            background: #FF6242;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(0, 169, 197, 0.2);
+            color: #00A9C5;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .sub {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            
+
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 12px 10px;
+            }
+
+            .badge {
+                display: block;
+                margin: 5px 0 0 0;
+                width: fit-content;
+            }
+
+           
+        }
+        @media (max-width: 480px) {
+            thead {
+                display: none;
+            }
+
+            tr {
+                display: block;
+                margin-bottom: 15px;
+                border: 2px solid #ecf0f1;
+                border-radius: 10px;
+                overflow: hidden;
+            }
+
+            td {
+                display: block;
+                text-align: right;
+                padding: 12px;
+                border-bottom: 1px solid #ecf0f1;
+            }
+
+            td:last-child {
+                border-bottom: none;
+            }
+
+            td::before {
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                color: #00A9C5;
+            }
+
+            .total-row td::before {
+                color: white;
+            }
+        }
+
+     
+
+        .summary-card {
+            background: #FF6242;
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(255, 98, 66, 0.3);
+        }
+
+        .summary-card h2 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .summary-card .amount {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
 
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
