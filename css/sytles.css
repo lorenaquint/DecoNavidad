@@ -569,3 +569,105 @@
             .section-title { font-size: 32px; }
             .items-grid { grid-template-columns: 1fr; }
         }
+        /* Para imprimir */
+  
+    /* Tus estilos normales aquí */
+    
+    /* Estilos para impresión PDF */
+    @media print {
+    @page {
+        margin: 1cm;
+        size: A4 portrait;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    /* Evitar que elementos se corten */
+    .item-card, 
+    .section,
+    .concepto-box,
+    .quote-section,
+    .impact-card,
+    .table-wrapper {
+        page-break-inside: avoid;
+    }
+
+    /* Configuración para imágenes - CRÍTICO para que no se corten */
+    img {
+        max-height: 22cm !important;
+        max-width: 100% !important;
+        width: auto !important;
+        height: auto !important;
+        page-break-inside: avoid;
+        page-break-after: avoid;
+        display: block;
+        margin: 0.5cm auto;
+        object-fit: contain;
+    }
+
+    /* Contenedores de imágenes */
+    .thumb {
+        page-break-inside: avoid;
+        margin: 0.3cm 0;
+    }
+
+    .center {
+        page-break-inside: avoid;
+    }
+
+    /* Forzar colores en elementos con fondo */
+    thead,
+    .total-row,
+    .summary-card,
+    .concepto-box,
+    .quote-section,
+    .cta-section {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color-adjust: exact;
+    }
+
+    /* Quitar sombras */
+    .section,
+    .item-card,
+    .table-wrapper,
+    .summary-card,
+    .thumb {
+        box-shadow: none;
+    }
+
+    /* Ocultar scroll indicator */
+    .scroll-indicator {
+        display: none;
+    }
+
+    /* Ajustar tamaños de fuente para impresión */
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+}
+    
+    
+    /* Si tienes imágenes dentro de contenedores específicos */
+   
+    
+    /* Para imágenes grandes que ocupan mucho espacio */
+    /* .imagen-grande {
+        page-break-before: always;  /* Empieza en nueva página */
+    
+
+        /* ... resto del código @media print ... */
+    
